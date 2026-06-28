@@ -12,22 +12,22 @@ interface ProjectCardProps {
 }
 
 const CARD_ACCENTS: Record<string, { glow: string; gradient: string; bar: string }> = {
-  travsy: {
+  "social-strategy": {
     glow: "0 8px 60px rgba(251,191,36,0.25), 0 0 0 1px rgba(251,191,36,0.2)",
     gradient: "linear-gradient(135deg, rgba(251,191,36,0.1) 0%, rgba(255,255,255,0.03) 40%, rgba(249,115,22,0.06) 100%)",
     bar: "linear-gradient(90deg, rgba(251,191,36,0.8), rgba(249,115,22,0.4), transparent)",
   },
-  chatify: {
+  "content-creation": {
     glow: "0 8px 60px rgba(96,165,250,0.25), 0 0 0 1px rgba(96,165,250,0.2)",
     gradient: "linear-gradient(135deg, rgba(96,165,250,0.1) 0%, rgba(255,255,255,0.03) 40%, rgba(6,182,212,0.06) 100%)",
     bar: "linear-gradient(90deg, rgba(96,165,250,0.8), rgba(6,182,212,0.4), transparent)",
   },
-  saarthi: {
+  "account-management": {
     glow: "0 8px 60px rgba(52,211,153,0.25), 0 0 0 1px rgba(52,211,153,0.2)",
     gradient: "linear-gradient(135deg, rgba(52,211,153,0.1) 0%, rgba(255,255,255,0.03) 40%, rgba(16,185,129,0.06) 100%)",
     bar: "linear-gradient(90deg, rgba(52,211,153,0.8), rgba(16,185,129,0.4), transparent)",
   },
-  hirexx: {
+  "campaign-planning": {
     glow: "0 8px 60px rgba(167,139,250,0.25), 0 0 0 1px rgba(167,139,250,0.2)",
     gradient: "linear-gradient(135deg, rgba(167,139,250,0.1) 0%, rgba(255,255,255,0.03) 40%, rgba(139,92,246,0.06) 100%)",
     bar: "linear-gradient(90deg, rgba(167,139,250,0.8), rgba(139,92,246,0.4), transparent)",
@@ -48,24 +48,24 @@ interface Highlight {
 }
 
 const CARD_HIGHLIGHTS: Record<string, Highlight[]> = {
-  travsy: [
+  "social-strategy": [
     {
-      icon: "🎓",
-      text: "Backed by IIT Alumni & Google Lead",
+      icon: "◎",
+      text: "Audience-first planning",
       style: "bg-amber-500/8 border-amber-400/25 text-amber-300",
       glow: "inset 0 1px 0 rgba(251,191,36,0.2), 0 0 10px rgba(251,191,36,0.1)",
     },
     {
-      icon: "🎒",
-      text: "50+ Successful Backpackers & counting",
+      icon: "✦",
+      text: "Built around your brand voice",
       style: "bg-orange-500/8 border-orange-400/20 text-orange-300",
       glow: "inset 0 1px 0 rgba(249,115,22,0.2), 0 0 10px rgba(249,115,22,0.08)",
     },
   ],
-  saarthi: [
+  "account-management": [
     {
-      icon: "👥",
-      text: "100+ Live Users",
+      icon: "✓",
+      text: "Consistent from idea to publish",
       style: "bg-emerald-500/8 border-emerald-400/25 text-emerald-300",
       glow: "inset 0 1px 0 rgba(52,211,153,0.2), 0 0 10px rgba(52,211,153,0.1)",
     },
@@ -75,7 +75,7 @@ const CARD_HIGHLIGHTS: Record<string, Highlight[]> = {
 export default function ProjectCard({ project, index, onClick }: ProjectCardProps) {
   const accent = CARD_ACCENTS[project.id] || DEFAULT_ACCENT;
   const renderVisual = () => {
-    if (project.id === "travsy") {
+    if (project.id === "social-strategy") {
       return (
         <div className="relative w-full h-full bg-[#0d0a00] flex flex-col items-center justify-center p-5 gap-3 overflow-hidden">
           <motion.div
@@ -91,16 +91,16 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             className="relative z-10 bg-[#1a1200] border border-amber-500/25 rounded-2xl p-4 w-full"
           >
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-[10px] text-amber-400 tracking-widest uppercase">Itinerary</span>
+              <span className="font-mono text-[10px] text-amber-400 tracking-widest uppercase">Content Plan</span>
               <span className="flex items-center gap-1 font-mono text-[9px] text-amber-400/80 bg-amber-500/10 px-2 py-0.5 rounded-full">
                 <span className="w-1 h-1 rounded-full bg-amber-400 animate-pulse" />
-                AI · 18s
+                Ready
               </span>
             </div>
             {[
-              { icon: "✈", label: "Paris, France", sub: "5 Days · Jun 2026" },
-              { icon: "🏨", label: "Hôtel Le Marais", sub: "★★★★ · €120/night" },
-              { icon: "🗺", label: "Day 1: Eiffel Tower", sub: "3 activities planned" },
+              { icon: "◎", label: "Brand Direction", sub: "Voice and audience" },
+              { icon: "✦", label: "Content Pillars", sub: "Themes that stay consistent" },
+              { icon: "↗", label: "Channel Rhythm", sub: "A practical publishing plan" },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -125,16 +125,16 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             viewport={{ once: false }}
             className="relative z-10 flex items-center gap-2 w-full bg-amber-950/40 border border-amber-500/15 rounded-xl px-3 py-2"
           >
-            <span className="text-base">🌤</span>
+            <span className="text-base">✎</span>
             <div>
-              <div className="text-white text-[10px] font-medium">Weather-aware packing</div>
-              <div className="text-amber-400/60 text-[9px] font-mono">24°C · Pack light jacket</div>
+              <div className="text-white text-[10px] font-medium">Strategy before posting</div>
+              <div className="text-amber-400/60 text-[9px] font-mono">Every story has a reason</div>
             </div>
           </motion.div>
         </div>
       );
     }
-    if (project.id === "saarthi") {
+    if (project.id === "account-management") {
       return (
         <div className="relative w-full h-full bg-[#0a100a] flex flex-col items-center justify-center p-5 gap-3 overflow-hidden">
           <motion.div
@@ -144,9 +144,9 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
           />
           <div className="relative z-10 flex gap-1.5 w-full">
             {[
-              { label: "Applied", dot: "bg-blue-400", count: 12, items: ["Google", "Meta", "+10"] },
-              { label: "Interview", dot: "bg-amber-400", count: 4, items: ["Amazon", "+3"] },
-              { label: "Offer", dot: "bg-emerald-400", count: 1, items: ["Kimbal ✓"] },
+              { label: "Ideas", dot: "bg-blue-400", count: 12, items: ["Insights", "Trends", "+10"] },
+              { label: "In Review", dot: "bg-amber-400", count: 4, items: ["Reels", "+3"] },
+              { label: "Ready", dot: "bg-emerald-400", count: 1, items: ["Publish ✓"] },
             ].map((col, ci) => (
               <motion.div
                 key={ci}
@@ -184,12 +184,12 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             className="relative z-10 flex items-center gap-1.5 w-full bg-emerald-950/50 border border-emerald-800/30 rounded-full px-3 py-1.5 justify-center"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-mono text-[9px] text-emerald-400">AI Cold Email · Resume Tailor · Mock AI</span>
+            <span className="font-mono text-[9px] text-emerald-400">Copy · Creative · Calendar</span>
           </motion.div>
         </div>
       );
     }
-    if (project.id === "hirexx") {
+    if (project.id === "campaign-planning") {
       return (
         <div className="relative w-full h-full bg-[#0a0a0a] p-6 flex flex-col justify-center">
           <div className="bg-[#111] border border-border rounded-lg p-4 font-mono text-xs shadow-2xl">
@@ -204,17 +204,17 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
               viewport={{ once: false }}
               className="text-gray-300"
             >
-              <span className="text-blue-400">const</span> <span className="text-yellow-300">jobListing</span> = {'{'}
-              <br/>&nbsp;&nbsp;role: <span className="text-orange-300">&quot;Frontend Engineer&quot;</span>,
-              <br/>&nbsp;&nbsp;auth: <span className="text-orange-300">&quot;Clerk OAuth&quot;</span>,
-              <br/>&nbsp;&nbsp;rbac: <span className="text-blue-400">true</span>
+              <span className="text-blue-400">const</span> <span className="text-yellow-300">campaign</span> = {'{'}
+              <br/>&nbsp;&nbsp;objective: <span className="text-orange-300">&quot;Brand awareness&quot;</span>,
+              <br/>&nbsp;&nbsp;voice: <span className="text-orange-300">&quot;Consistent&quot;</span>,
+              <br/>&nbsp;&nbsp;ready: <span className="text-blue-400">true</span>
               <br/>{'}'};
             </motion.div>
           </div>
         </div>
       );
     }
-    if (project.id === "chatify") {
+    if (project.id === "content-creation") {
       return (
         <div className="relative w-full h-full bg-surface-2 p-6 flex flex-col justify-center gap-4">
           <motion.div
@@ -223,7 +223,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             transition={{ delay: 0.1 }}
             className="bg-blue-600 text-white p-3 rounded-2xl rounded-tl-sm w-3/4 text-sm shadow-md"
           >
-            Hey! The real-time sockets are working perfectly.
+            Let&apos;s turn this insight into a story.
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -231,7 +231,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             transition={{ delay: 0.3 }}
             className="bg-[#222] text-text-primary p-3 rounded-2xl rounded-tr-sm w-2/3 self-end text-sm border border-border shadow-md"
           >
-            Awesome. Are push notifications integrated?
+            Great. We&apos;ll shape it for the right channel.
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -246,13 +246,13 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
         </div>
       );
     }
-    if (project.id === "tradebook") {
+    if (project.id === "short-form-video") {
       const bars = [40, 65, 50, 80, 55, 90, 70, 85, 60, 95];
       return (
         <div className="relative w-full h-full bg-[#0a0a0a] p-6 flex flex-col justify-center gap-4 overflow-hidden">
           <div className="flex items-center justify-between mb-1">
-            <span className="font-mono text-xs text-emerald-400">NIFTY 50</span>
-            <span className="font-mono text-xs text-emerald-400">▲ +2.4%</span>
+            <span className="font-mono text-xs text-emerald-400">CONTENT SIGNALS</span>
+            <span className="font-mono text-xs text-emerald-400">LEARN &amp; REFINE</span>
           </div>
           <div className="flex items-end gap-1 h-24">
             {bars.map((h, i) => (
@@ -286,7 +286,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
         </div>
       );
     }
-    if (project.id === "plant-ai") {
+    if (project.id === "copy-storytelling") {
       return (
         <div className="relative w-full h-full bg-[#0a0f0a] flex flex-col items-center justify-center gap-4 p-6 overflow-hidden">
           <div className="relative">
@@ -324,21 +324,21 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             viewport={{ once: false }}
             className="bg-emerald-950/60 border border-emerald-800/50 rounded-lg px-4 py-2 text-center"
           >
-            <div className="font-mono text-[10px] text-emerald-400 tracking-widest uppercase mb-1">Classification</div>
+            <div className="font-mono text-[10px] text-emerald-400 tracking-widest uppercase mb-1">Content Review</div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="font-mono text-xs text-white">Healthy Leaf</span>
-              <span className="font-mono text-xs text-emerald-400 ml-auto">98%</span>
+              <span className="font-mono text-xs text-white">On Brand</span>
+              <span className="font-mono text-xs text-emerald-400 ml-auto">Ready</span>
             </div>
           </motion.div>
         </div>
       );
     }
-    if (project.id === "wordoodle") {
+    if (project.id === "community-engagement") {
       const grid = [
-        ["W","O","R","D","S"],
-        ["G","A","M","E","S"],
-        ["P","L","A","Y","_"],
+        ["S","T","O","R","Y"],
+        ["B","R","A","N","D"],
+        ["S","H","A","R","E"],
       ];
       const colors = [
         ["correct","absent","present","correct","absent"],
@@ -375,17 +375,17 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             transition={{ delay: 0.8 }}
             className="font-mono text-[10px] text-text-muted mt-2 tracking-widest"
           >
-            5 GUESSES REMAINING
+            STORY IDEAS IN MOTION
           </motion.div>
         </div>
       );
     }
-    if (project.id === "sorting-visualizer") {
+    if (project.id === "performance-insights") {
       const heights = [85, 30, 65, 15, 50, 75, 25, 55, 40, 70];
       const sorted = [...heights].sort((a, b) => a - b);
       return (
         <div className="relative w-full h-full bg-[#0a0a0a] flex flex-col items-center justify-center gap-4 p-6">
-          <div className="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">Bubble Sort</div>
+        <div className="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">Trend Signals</div>
           <div className="flex items-end gap-1.5 h-28 w-full">
             {heights.map((h, i) => (
               <motion.div
@@ -400,9 +400,9 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
             ))}
           </div>
           <div className="flex gap-3 font-mono text-[10px]">
-            <span className="text-blue-400">O(n²)</span>
+            <span className="text-blue-400">Listen</span>
             <span className="text-text-muted">·</span>
-            <span className="text-text-muted">Space O(1)</span>
+            <span className="text-text-muted">Learn · Adapt</span>
           </div>
         </div>
       );
@@ -477,7 +477,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
           <div className="flex items-center gap-6">
             <MagneticButton strength={0.1}>
               <span className="font-mono text-sm text-white group-hover:text-blue-400 transition-colors pointer-events-none">
-                View Project &rarr;
+                Explore Service &rarr;
               </span>
             </MagneticButton>
             {project.githubUrl && (

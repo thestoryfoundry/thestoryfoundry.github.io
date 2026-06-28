@@ -56,7 +56,7 @@ export default function Preloader() {
         ref={textRef}
         className="font-mono text-6xl tracking-wide text-white mb-8"
       >
-        DK
+        SF
       </h1>
       <div className="w-48 h-[1px] bg-border overflow-hidden">
         <div ref={progressRef} className="h-full w-0 bg-white" />

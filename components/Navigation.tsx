@@ -8,10 +8,10 @@ import { useScrollspy } from "@/hooks/useScrollspy";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Work", id: "projects" },
+  { label: "Services", id: "projects" },
   { label: "About", id: "about" },
-  { label: "Skills", id: "skills" },
-  { label: "Timeline", id: "timeline" },
+  { label: "Capabilities", id: "skills" },
+  { label: "Process", id: "timeline" },
   { label: "Contact", id: "contact" },
 ];
 
@@ -133,7 +133,7 @@ export default function Navigation() {
           )}
         >
           <div className="font-mono text-sm font-medium tracking-wider text-white">
-            DK
+            SF
           </div>
 
           <div className="hidden md:flex items-center gap-6">
@@ -158,12 +158,10 @@ export default function Navigation() {
           <div className="hidden md:block">
             <MagneticButton strength={0.2}>
               <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noreferrer"
+                href="mailto:anspurple16@gmail.com"
                 className="text-xs font-mono tracking-widest uppercase px-4 py-2 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-colors"
               >
-                Resume
+                Let&apos;s Talk
               </a>
             </MagneticButton>
           </div>
@@ -217,11 +215,10 @@ export default function Navigation() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: NAV_LINKS.length * 0.1 }}
-                href="/resume.pdf"
-                target="_blank"
+                href="mailto:anspurple16@gmail.com"
                 className="mt-8 text-sm font-mono tracking-widest uppercase px-6 py-3 rounded-full border border-white/20 text-white"
               >
-                Resume
+                Let&apos;s Talk
               </motion.a>
             </div>
           </motion.div>

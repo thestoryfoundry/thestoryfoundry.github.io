@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { experience, education } from "@/data/content";
+import { experience, education, personalInfo } from "@/data/content";
 import SectionLabel from "./ui/SectionLabel";
 import GlowCard from "./ui/GlowCard";
 import Badge from "./ui/Badge";
@@ -55,9 +55,9 @@ export default function Timeline() {
 
   return (
     <section id="timeline" className="py-16 md:py-32 px-6 md:px-12 max-w-5xl mx-auto border-t border-border">
-      <SectionLabel number="04">Experience</SectionLabel>
+      <SectionLabel number="04">Our Process</SectionLabel>
       <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white mt-6 mb-10 md:mb-24">
-        Career
+        From Idea to Impact
       </h2>
 
       <div ref={containerRef} className="relative">
@@ -124,10 +124,19 @@ export default function Timeline() {
             <GlowCard className="p-5 md:p-8 flex flex-col md:flex-row gap-5 md:gap-8 items-center md:items-start text-center md:text-left">
               <div className="flex flex-col items-center justify-center shrink-0">
                 <div className="text-4xl font-light text-white mb-1">{education.cgpa.split('/')[0]}</div>
-                <span className="text-text-muted text-xs font-mono">/ 10 CGPA</span>
+                <span className="text-text-muted text-xs font-mono">Founder</span>
               </div>
               <div className="flex-1 border-t md:border-t-0 md:border-l border-border pt-6 md:pt-0 md:pl-8">
-                <h3 className="text-lg font-medium text-white">{education.institution}</h3>
+                <h3 className="text-lg font-medium text-white">
+                  <a
+                    href={personalInfo.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-text-secondary transition-colors"
+                  >
+                    {education.institution} ↗
+                  </a>
+                </h3>
                 <div className="text-text-muted text-sm mt-1">{education.degree}</div>
                 <div className="font-mono text-xs text-text-muted mt-2 opacity-70">
                   {education.period} &middot; {education.location}

@@ -105,12 +105,12 @@ export default function Projects() {
 
       {/* A. SECTION HEADER */}
       <div className="px-6 md:px-12 pt-12 md:pt-20 pb-6 md:pb-8 relative z-10 bg-background">
-        <SectionLabel number="01">Selected Work</SectionLabel>
+        <SectionLabel number="01">Our Services</SectionLabel>
         <h2 className="text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-4 md:mb-6">
-          Things I&apos;ve Built
+          How We Help Brands
         </h2>
         <p className="text-text-muted text-base md:text-lg max-w-md">
-          Full-stack products, ML systems, and everything in between.
+          Strategy, content, and consistent social media care—shaped around your story.
         </p>
       </div>
 
@@ -160,7 +160,7 @@ export default function Projects() {
 
       {/* C. SECONDARY GRID (Tier 2) */}
       <div className="px-6 md:px-12 py-24 bg-background relative z-10 border-t border-border mt-12 md:mt-0">
-        <h3 className="text-2xl font-light text-text-muted mb-12">More Projects</h3>
+        <h3 className="text-2xl font-light text-text-muted mb-12">More Ways We Help</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {tier2.map((project) => (
             <div key={project.id} className="tier2-card">
@@ -173,7 +173,7 @@ export default function Projects() {
       {/* D. OTHER WORK STRIP (Tier 3) */}
       <div className="px-6 md:px-12 py-12 border-t border-border bg-background relative z-10">
         <h3 className="font-mono text-xs text-text-muted tracking-widest uppercase mb-6">
-          Other Work
+          Built Around Your Brand
         </h3>
         <div className="flex flex-col">
           {tier3.map((project) => (

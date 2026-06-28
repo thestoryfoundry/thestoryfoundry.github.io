@@ -16,34 +16,32 @@ interface TerminalLine {
 
 const TERMINAL_LINES: TerminalLine[] = [
   { type: "prompt", text: "whoami" },
-  { type: "output", text: "Dixit Kumar — Software Developer at Kimbal, Noida" },
+  { type: "output", text: "StoryFoundry — a social media company led by Anshu Yadav" },
   { type: "blank" },
-  { type: "prompt", text: "cat background.txt" },
-  { type: "output", text: "B.Tech ECE, NSUT Delhi (2021–2025). Started with" },
-  { type: "output", text: "DSA and competitive programming, moved to full-stack," },
-  { type: "output", text: "now building firmware and delivering end-to-end" },
-  { type: "output", text: "applications at Kimbal and exploring everthing about SaaS." },
+  { type: "prompt", text: "cat purpose.txt" },
+  { type: "output", text: "We help brands find the stories worth sharing," },
+  { type: "output", text: "shape them for the right social channels, and" },
+  { type: "output", text: "build a consistent presence around a clear voice." },
   { type: "blank" },
-  { type: "prompt", text: "./achievements --list" },
-  { type: "success", text: "[+] Amazon ML: top 0.5% of 80,000+ applicants" },
-  { type: "success", text: "[+] 900+ DSA problems solved" },
-  { type: "success", text: "[+] CodeChef 3★ · 1600+ rating" },
+  { type: "prompt", text: "./approach --list" },
+  { type: "success", text: "[+] Listen before planning" },
+  { type: "success", text: "[+] Put the brand story first" },
+  { type: "success", text: "[+] Learn from every content cycle" },
   { type: "blank" },
-  { type: "prompt", text: "ls skills/" },
-  { type: "output", text: "web/     embedded/     ml/     tools/" },
+  { type: "prompt", text: "ls services/" },
+  { type: "output", text: "strategy/     content/     community/     insights/" },
   { type: "blank" },
-  { type: "prompt", text: "cat skills/web" },
-  { type: "output", text: "React  Next.js  TypeScript  Node.js  Express" },
-  { type: "output", text: "MongoDB  Firebase  Tailwind  Framer Motion" },
+  { type: "prompt", text: "cat services/strategy" },
+  { type: "output", text: "Audience Research  Brand Positioning  Campaign Planning" },
   { type: "blank" },
-  { type: "prompt", text: "cat skills/embedded" },
-  { type: "output", text: "C  C++  C#  .NET  WPF  RTOS  UART  RL78" },
+  { type: "prompt", text: "cat services/content" },
+  { type: "output", text: "Short-Form Video  Visual Design  Copywriting" },
   { type: "blank" },
-  { type: "prompt", text: "cat skills/ml" },
-  { type: "output", text: "Python  PyTorch  Scikit-learn  Flask  AWS SageMaker" },
+  { type: "prompt", text: "cat services/community" },
+  { type: "output", text: "Publishing  Scheduling  Audience Engagement" },
   { type: "blank" },
-  { type: "prompt", text: "cat skills/tools" },
-  { type: "output", text: "Git  GitHub  Docker  Postman  Vercel  Figma" },
+  { type: "prompt", text: "cat services/insights" },
+  { type: "output", text: "Performance Reporting  Trend Research  Optimization" },
   { type: "cursor" },
 ];
 
@@ -88,14 +86,14 @@ export default function About() {
         <div className="md:sticky md:top-32 order-2 md:order-1 flex flex-col">
           <SectionLabel number="02">About</SectionLabel>
           <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white mt-6">
-            Who I Am
+            The Story Behind StoryFoundry
           </h2>
           <p className="text-text-muted text-lg leading-relaxed max-w-sm mt-6">
-            Engineer by trade, builder by nature. I work across the stack &mdash; web products, embedded systems, and ML pipelines.
+            StoryFoundry is a founder-led social media company run by Anshu Yadav. We bring strategy, creativity, and consistency together to help brands tell better stories online.
           </p>
 
           <div className="flex flex-col gap-3 mt-10">
-            {["📍 Noida, India", "🎓 B.Tech ECE — NSUT 2025", "⚡ Currently at Kimbal"].map((item, i) => (
+            {["✦ Founder-led", "✎ Story-first", "◎ Strategy-backed"].map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
@@ -128,7 +126,7 @@ export default function About() {
                 <div className="w-3 h-3 rounded-full bg-[#28c840]" />
               </div>
               <span className="font-mono text-xs text-text-muted ml-4">
-                dixit@portfolio ~
+                storyfoundry@social ~
               </span>
             </div>
 
@@ -138,8 +136,8 @@ export default function About() {
                 <div key={i} className="term-line opacity-0 flex whitespace-pre-wrap">
                   {line.type === "prompt" && (
                     <span className="mr-2 shrink-0">
-                      <span className="text-[#4ec9b0]">dixit</span>
-                      <span className="text-text-muted">@portfolio</span>
+                      <span className="text-[#4ec9b0]">storyfoundry</span>
+                      <span className="text-text-muted">@social</span>
                       <span className="text-text-muted"> ~ </span>
                       <span className="text-[#dcdcaa]">$</span>
                     </span>

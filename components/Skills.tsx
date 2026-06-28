@@ -34,9 +34,9 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-16 md:py-32 px-6 md:px-12 max-w-6xl mx-auto flex flex-col justify-center border-t border-border">
-      <SectionLabel number="03">Expertise</SectionLabel>
+      <SectionLabel number="03">Capabilities</SectionLabel>
       <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white mt-6 mb-10 md:mb-16">
-        What I Work With
+        What We Bring Together
       </h2>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
@@ -72,16 +72,16 @@ export default function Skills() {
         {/* Legend */}
         <div className="w-full md:w-1/3 grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-6">
           {[
-            { color: "#60a5fa", label: "Web & Full Stack", count: skills.web.length },
-            { color: "#a78bfa", label: "Low Latency Systems", count: skills.systems.length },
-            { color: "#34d399", label: "Machine Learning", count: skills.ml.length },
-            { color: "#fb923c", label: "Tools & Cloud", count: skills.tools.length },
+            { color: "#60a5fa", label: "Strategy", count: skills.web.length },
+            { color: "#a78bfa", label: "Content", count: skills.systems.length },
+            { color: "#34d399", label: "Community", count: skills.ml.length },
+            { color: "#fb923c", label: "Insights", count: skills.tools.length },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-3 p-3 md:p-4 rounded-xl border border-border bg-surface">
               <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full flex-shrink-0" style={{ background: item.color }} />
               <div className="min-w-0">
                 <div className="text-white text-xs md:text-sm truncate">{item.label}</div>
-                <div className="text-text-muted text-[10px] md:text-xs font-mono mt-0.5">{item.count} Skills</div>
+                <div className="text-text-muted text-[10px] md:text-xs font-mono mt-0.5">{item.count} Capabilities</div>
               </div>
             </div>
           ))}

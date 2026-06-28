@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsEnvelope, BsLinkedin } from "react-icons/bs";
 import SectionLabel from "./ui/SectionLabel";
 import Badge from "./ui/Badge";
 import MagneticButton from "./ui/MagneticButton";
@@ -54,12 +54,12 @@ export default function Contact() {
 
       <div ref={headlineRef} className="mt-6 flex flex-col items-center gap-2">
         <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white flex flex-wrap justify-center gap-[0.2em]">
-          {"Let's build".split(" ").map((word, i) => (
+          {"Let's build your".split(" ").map((word, i) => (
             <span key={i} className="word inline-block">{word}</span>
           ))}
         </h2>
         <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-text-secondary flex flex-wrap justify-center gap-[0.2em]">
-          {"something together.".split(" ").map((word, i) => (
+          {"brand's next story.".split(" ").map((word, i) => (
             <span key={i} className="word inline-block">{word}</span>
           ))}
         </h2>
@@ -104,19 +104,19 @@ export default function Contact() {
       <div className="mt-12 flex justify-center gap-6">
         <MagneticButton strength={0.3}>
           <a
-            href={personalInfo.github}
-            target="_blank"
+            href={`mailto:${personalInfo.email}`}
             className="border border-border rounded-full p-5 md:p-4 flex items-center justify-center hover:bg-white/5 hover:border-white/20 transition-colors text-text-muted hover:text-white"
             data-cursor="hover"
-            aria-label="GitHub"
+            aria-label="Email StoryFoundry"
           >
-            <BsGithub size={20} />
+            <BsEnvelope size={20} />
           </a>
         </MagneticButton>
         <MagneticButton strength={0.3}>
           <a
             href={personalInfo.linkedin}
             target="_blank"
+            rel="noreferrer"
             className="border border-border rounded-full p-5 md:p-4 flex items-center justify-center hover:bg-white/5 hover:border-white/20 transition-colors text-text-muted hover:text-white"
             data-cursor="hover"
             aria-label="LinkedIn"
@@ -129,7 +129,7 @@ export default function Contact() {
       <div className="mt-12">
         <Badge variant="outline">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-[pulse_2s_ease-in-out_infinite] mr-2 inline-block" />
-          Available for full-time roles & Freelancing
+          Open to brand collaborations
         </Badge>
       </div>
     </section>

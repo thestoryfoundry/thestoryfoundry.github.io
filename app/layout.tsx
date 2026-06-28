@@ -5,13 +5,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thestoryfoundry.github.io"),
-  title: "Dixit Kumar — Software Engineer",
-  description: "Software Engineer specializing in full-stack web development and embedded systems. Building reliable products at scale.",
+  title: "StoryFoundry — Social Media Company",
+  description: "StoryFoundry turns brand ideas into social stories people remember through strategy, content, community, and insights.",
   openGraph: {
-    title: "Dixit Kumar — Software Engineer",
-    description: "Software Engineer specializing in full-stack web development and embedded systems. Building reliable products at scale.",
+    title: "StoryFoundry — Social Media Company",
+    description: "We turn brand ideas into social stories people remember.",
     url: "https://thestoryfoundry.github.io/",
-    siteName: "Dixit Kumar Portfolio",
+    siteName: "StoryFoundry",
     locale: "en_US",
     type: "website",
   },

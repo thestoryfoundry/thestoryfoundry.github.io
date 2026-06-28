@@ -9,7 +9,7 @@ import { useLenisContext } from "@/providers/LenisProvider";
 
 const HeroScene = dynamic(() => import("./three/HeroScene"), { ssr: false });
 
-const ROLES = ["MERN Stack", "Embedded Systems", "Full Stack", "ML Integration"];
+const ROLES = ["Social Strategy", "Content Creation", "Community Management", "Growth Insights"];
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -103,7 +103,7 @@ export default function Hero() {
             <span className="absolute inset-0 rounded-full bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
             <span className="relative flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_2px_rgba(52,211,153,0.6)] animate-pulse" />
-              Available for opportunities
+              {"Founded & led by Anshu Yadav"}
             </span>
           </span>
           <div className="w-1 h-1 rounded-full bg-border-2 hidden md:block" />
@@ -116,14 +116,14 @@ export default function Hero() {
             className="text-[2.2rem] sm:text-5xl md:text-7xl lg:text-9xl font-light tracking-tight text-white mb-2"
             style={{ perspective: "1000px" }}
           >
-            {renderSplitText("Dixit Kumar")}
+            {renderSplitText("StoryFoundry")}
           </h1>
           <h2
             ref={headline2Ref}
             className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-text-secondary"
             style={{ perspective: "1000px" }}
           >
-            {renderSplitText("Software Engineer")}
+            {renderSplitText("Social Media Company")}
           </h2>
         </div>
 
@@ -131,7 +131,7 @@ export default function Hero() {
           ref={sublineRef}
           className="w-full max-w-full md:max-w-lg text-text-muted text-base md:text-lg leading-relaxed mt-6 opacity-0 text-center md:text-left mx-auto md:mx-0"
         >
-          Building reliable systems at scale. From embedded firmware to AI-powered web.
+          We turn brand ideas into social stories people remember.
         </p>
 
         <div className="h-6 mt-4 relative overflow-hidden flex justify-center md:justify-start">
@@ -157,19 +157,20 @@ export default function Hero() {
                 className="w-full bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-white/90 transition-colors"
                 data-cursor="hover"
               >
-                View Work ↓
+                Explore Services ↓
               </button>
             </MagneticButton>
           </div>
           <div className="opacity-0 w-full md:w-auto">
             <MagneticButton strength={0.2}>
               <a
-                href="/resume.pdf"
+                href="https://www.linkedin.com/in/anshu-yadav-9b21a3158/"
                 target="_blank"
+                rel="noreferrer"
                 className="w-full block text-center border border-border text-text-secondary px-6 py-3 rounded-full text-sm hover:bg-white/5 hover:text-white transition-colors"
                 data-cursor="hover"
               >
-                Resume
+                Connect on LinkedIn
               </a>
             </MagneticButton>
           </div>

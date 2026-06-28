@@ -6,7 +6,7 @@ import Badge from "../ui/Badge";
 import type { Project } from "@/data/content";
 
 function MiniVisual({ id }: { id: string }) {
-  if (id === "tradebook") {
+  if (id === "short-form-video") {
     const bars = [40, 65, 30, 80, 55, 70, 45, 90, 60, 75];
     return (
       <div className="w-full h-20 bg-[#0a0a0a] rounded-lg px-3 pt-3 pb-1 flex flex-col gap-1 overflow-hidden">
@@ -24,12 +24,12 @@ function MiniVisual({ id }: { id: string }) {
           ))}
         </div>
         <div className="flex justify-between font-mono text-[8px] text-emerald-500">
-          <span>NIFTY ▲ +2.4%</span><span>VOL 12.4M</span>
+          <span>HOOKS</span><span>FORMATS</span>
         </div>
       </div>
     );
   }
-  if (id === "plant-ai") {
+  if (id === "copy-storytelling") {
     return (
       <div className="w-full h-20 bg-[#0a0f0a] rounded-lg flex items-center justify-center gap-4 overflow-hidden relative">
         <motion.div
@@ -62,20 +62,20 @@ function MiniVisual({ id }: { id: string }) {
           viewport={{ once: false }}
           className="relative z-10 text-left"
         >
-          <div className="font-mono text-[9px] text-emerald-400 tracking-widest uppercase">Detected</div>
-          <div className="font-mono text-xs text-white font-bold">Healthy</div>
-          <div className="font-mono text-[10px] text-emerald-400">98% conf.</div>
+          <div className="font-mono text-[9px] text-emerald-400 tracking-widest uppercase">Voice Check</div>
+          <div className="font-mono text-xs text-white font-bold">On Brand</div>
+          <div className="font-mono text-[10px] text-emerald-400">Ready</div>
         </motion.div>
       </div>
     );
   }
-  if (id === "wordoodle") {
+  if (id === "community-engagement") {
     const row = [
-      { l: "W", c: "correct" },
-      { l: "O", c: "absent" },
-      { l: "R", c: "present" },
-      { l: "D", c: "correct" },
-      { l: "S", c: "absent" },
+      { l: "S", c: "correct" },
+      { l: "T", c: "absent" },
+      { l: "O", c: "present" },
+      { l: "R", c: "correct" },
+      { l: "Y", c: "absent" },
     ];
     const colorMap: Record<string, string> = {
       correct: "bg-emerald-600",
@@ -98,11 +98,11 @@ function MiniVisual({ id }: { id: string }) {
             </motion.div>
           ))}
         </div>
-        <div className="font-mono text-[9px] text-text-muted tracking-widest">5 GUESSES LEFT</div>
+        <div className="font-mono text-[9px] text-text-muted tracking-widest">MAKE IT MEMORABLE</div>
       </div>
     );
   }
-  if (id === "sorting-visualizer") {
+  if (id === "performance-insights") {
     const unsorted = [85, 20, 65, 10, 50, 75, 30, 55, 40, 90];
     const sorted = [...unsorted].sort((a, b) => a - b);
     return (
@@ -120,7 +120,7 @@ function MiniVisual({ id }: { id: string }) {
             />
           ))}
         </div>
-        <div className="font-mono text-[9px] text-blue-400 text-center">Bubble Sort · O(n²)</div>
+        <div className="font-mono text-[9px] text-blue-400 text-center">LISTEN · LEARN · ADAPT</div>
       </div>
     );
   }
@@ -128,10 +128,10 @@ function MiniVisual({ id }: { id: string }) {
 }
 
 const MINI_ACCENTS: Record<string, string> = {
-  tradebook: "rgba(52,211,153,0.25)",
-  "plant-ai": "rgba(74,222,128,0.25)",
-  wordoodle: "rgba(251,191,36,0.25)",
-  "sorting-visualizer": "rgba(96,165,250,0.25)",
+  "short-form-video": "rgba(52,211,153,0.25)",
+  "copy-storytelling": "rgba(74,222,128,0.25)",
+  "community-engagement": "rgba(251,191,36,0.25)",
+  "performance-insights": "rgba(96,165,250,0.25)",
 };
 
 interface MiniProjectCardProps {
@@ -139,7 +139,7 @@ interface MiniProjectCardProps {
 }
 
 export default function MiniProjectCard({ project }: MiniProjectCardProps) {
-  const hasVisual = ["tradebook", "plant-ai", "wordoodle", "sorting-visualizer"].includes(project.id);
+  const hasVisual = ["short-form-video", "copy-storytelling", "community-engagement", "performance-insights"].includes(project.id);
   const glowColor = MINI_ACCENTS[project.id] || "rgba(255,255,255,0.1)";
 
   return (
@@ -154,12 +154,12 @@ export default function MiniProjectCard({ project }: MiniProjectCardProps) {
           <h4 className="text-xl font-light text-white">{project.title}</h4>
           <span className="font-mono text-xs text-text-muted">{project.year}</span>
         </div>
-        {project.id === "wordoodle" && (
+        {project.id === "community-engagement" && (
           <span
             className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono border border-yellow-400/20 bg-yellow-500/8 text-yellow-300 mb-2"
             style={{ boxShadow: "inset 0 1px 0 rgba(253,224,71,0.15), 0 0 8px rgba(253,224,71,0.08)" }}
           >
-            🎮 Time Pass Game · Built for fun
+            ✦ Community-first conversations
           </span>
         )}
         <p className="text-text-muted text-sm leading-relaxed mt-2">

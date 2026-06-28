@@ -2,15 +2,9 @@
 
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import type { Project } from "@/data/content";
+import { personalInfo, type Project } from "@/data/content";
 import Badge from "../ui/Badge";
 import { useLenisContext } from "@/providers/LenisProvider";
-
-const PREVIEW_IMAGES: Record<string, string> = {
-  travsy: "/travsy-preview.png",
-  saarthi: "/saarthi-preview.png",
-};
 
 interface ProjectDrawerProps {
   project: Project | null;
@@ -93,73 +87,29 @@ export default function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawe
                   ))}
                 </div>
 
-                {/* Two-column on desktop when preview exists, single on mobile */}
+                {/* Service details */}
                 <div className="flex flex-col md:flex-row gap-8 md:items-start">
-
-                  {/* Preview image — left on desktop, full-width on mobile */}
-                  {PREVIEW_IMAGES[project.id] && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.15, duration: 0.45 }}
-                      className="relative w-full md:w-[44%] md:flex-shrink-0 rounded-2xl overflow-hidden border border-border"
-                      style={{ aspectRatio: "16/10" }}
-                    >
-                      <Image
-                        src={PREVIEW_IMAGES[project.id]}
-                        alt={`${project.title} preview`}
-                        fill
-                        className="object-cover object-top"
-                        sizes="(max-width: 768px) 100vw, 44vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#111]/50 via-transparent to-transparent" />
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          onClick={(e) => e.stopPropagation()}
-                          className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 border border-white/10 backdrop-blur-md text-xs font-mono text-white hover:bg-black/80 transition-colors"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          Open live site ↗
-                        </a>
-                      )}
-                    </motion.div>
-                  )}
-
-                  {/* Description + CTAs — right on desktop */}
+                  {/* Description + CTAs */}
                   <div className="flex-1 flex flex-col gap-6">
                     <p className="text-text-secondary leading-relaxed text-base md:text-lg whitespace-pre-wrap">
                       {project.longDescription}
                     </p>
 
                     <div className="flex flex-wrap gap-3 pt-1">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-medium hover:bg-white/90 transition-colors flex items-center gap-2"
-                        >
-                          Live Demo
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                          </svg>
-                        </a>
-                      )}
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          className="border border-border text-text-secondary px-6 py-2.5 rounded-full text-sm hover:bg-white/5 hover:text-white transition-colors flex items-center gap-2"
-                        >
-                          GitHub
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                          </svg>
-                        </a>
-                      )}
+                      <a
+                        href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(`${project.title} enquiry`)}`}
+                        className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-medium hover:bg-white/90 transition-colors flex items-center gap-2"
+                      >
+                        Start a conversation
+                      </a>
+                      <a
+                        href={personalInfo.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="border border-border text-text-secondary px-6 py-2.5 rounded-full text-sm hover:bg-white/5 hover:text-white transition-colors flex items-center gap-2"
+                      >
+                        Connect on LinkedIn
+                      </a>
                     </div>
                   </div>
                 </div>
