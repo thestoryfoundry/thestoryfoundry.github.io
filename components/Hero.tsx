@@ -99,7 +99,7 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col justify-center h-full">
 
         <div className="flex items-center gap-4 mb-8 md:mb-12 mt-20 md:mt-0 justify-center md:justify-start">
-          <span className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-wide text-white/90 border border-white/10 bg-white/5 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_0_16px_rgba(255,255,255,0.04)] overflow-hidden">
+          <span className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-wide text-white/90 border border-white/10 bg-white/5 backdrop-blur-sm shadow[...]">
             <span className="absolute inset-0 rounded-full bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
             <span className="relative flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_2px_rgba(52,211,153,0.6)] animate-pulse" />
@@ -159,19 +159,6 @@ export default function Hero() {
               >
                 Explore Services ↓
               </button>
-            </MagneticButton>
-          </div>
-          <div className="opacity-0 w-full md:w-auto">
-            <MagneticButton strength={0.2}>
-              <a
-                href="https://www.linkedin.com/in/anshu-yadav-9b21a3158/"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full block text-center border border-border text-text-secondary px-6 py-3 rounded-full text-sm hover:bg-white/5 hover:text-white transition-colors"
-                data-cursor="hover"
-              >
-                Connect on LinkedIn
-              </a>
             </MagneticButton>
           </div>
         </div>
